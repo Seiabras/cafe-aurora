@@ -1,5 +1,10 @@
 # Café Aurora
 
+> **In English:** a fictional cyberpunk café "hidden between dimensions", built for the Interface Development course
+> (CEUB, 2026/2). The same prompt went to three AIs (ChatGPT, Gemini and DeepSeek); I picked the best result, studied it
+> and rebuilt the code step by step. It comes in three builds (plain CSS, Bootstrap and Tailwind), in 13 languages, and
+> turns into a bakery by day. Live: https://cafe.linupedia.com.br
+
 Site de uma cafeteria fictícia, cyberpunk, “escondida entre dimensões”. Fiz para a disciplina de Desenvolvimento de
 Interfaces (CEUB, 2026/2), na atividade em que o mesmo prompt foi usado em três IAs (ChatGPT, Gemini e DeepSeek) para
 gerar páginas com HTML, CSS e JavaScript. Escolhi a versão do DeepSeek como a melhor, estudei e reconstruí o código
