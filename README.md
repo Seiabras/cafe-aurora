@@ -19,6 +19,32 @@ As três têm o mesmo conteúdo: tela de abertura, cursor próprio, fundo de par
 rolar, cardápio, um “laboratório” para montar a bebida (a xícara é desenhada só com CSS) e um painel que desloca o
 matiz de todas as cores.
 
+## Idiomas
+
+O site está em 13 idiomas: português do Brasil na raiz e `/pt-pt/`, `/es/`, `/ca/`, `/nl/`, `/en/`, `/fr/`, `/de/`,
+`/it/`, `/intl/` (inglês internacional), `/ja/`, `/ko/` e `/zh-hant/`, com as alternativas
+de cada página para os buscadores; o simulador de cada idioma do Linu Sites abre o Café no mesmo idioma. As páginas de cada idioma são geradas no repositório do
+[Linu Sites](https://github.com/Seiabras/linu-sites) (o modelo e os textos ficam em `ferramentas/cafe/`); aqui ficam as
+páginas prontas. As frases que o script escreve vão num `<script type="application/json">` em cada página.
+
+As versões `/bootstrap/` e `/tailwind/` continuam só em português.
+
+## De dia, a Padaria Aurora
+
+Das 6h às 18h no relógio de quem visita, o Café vira a Padaria Aurora: o mesmo universo da fenda, só que de manhã
+(croissant de 2087 camadas, pão de gravidade zero). Mudam as cores (creme, trigo, casca), o fundo (farinha no ar em vez
+da grade de neon), o letreiro, o cardápio, os depoimentos, o horário, e o laboratório vira “Monte o seu pão”: a
+farinha, o tempo de forno (a casca doura e o pão cresce) e o que vai por cima.
+
+- O `inicio.js` escolhe o modo antes de pintar (`data-modo` no `<html>`): primeiro `?modo=dia` ou `?modo=noite` no
+  endereço, depois a escolha guardada pelo botão de sol e lua, depois o relógio. Sem JavaScript, fica o café.
+- Cada texto que muda está duas vezes no HTML (`.so-noite` e `.so-dia`) e o CSS esconde o do outro modo. As cores de
+  dia são as mesmas variáveis redefinidas no bloco 17 do `estilo.css`, e o painel de matiz gira as duas paletas.
+- O botão faz a virada: o neon pisca, a tela se cobre, o sol nasce (ou a lua desce) e o modo troca por baixo. Com
+  “menos movimento”, troca direto.
+
+Para abrir direto a padaria: https://cafe.linupedia.com.br/?modo=dia
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
