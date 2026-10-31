@@ -68,3 +68,7 @@ Pelo endereço acima, ou abrindo o `index.html` no navegador. Não tem build nem
 - Respeita `prefers-reduced-motion`: com “menos movimento” ligado no sistema, as animações param.
 - O cursor próprio some em telas de toque.
 - Link para pular direto ao conteúdo, foco visível e textos alternativos nos elementos decorativos.
+- O texto do rodapé usa a mesma cor suave do resto da página (não mais os 3,7:1 de antes), o link do rodapé é
+  sublinhado e todo link e botão solto tem pelo menos 24 px de altura (WCAG 2.2, 2.5.8).
+- Conferido com o axe 4.10 em 31/10/2026, de dia e de noite, nas três versões: nenhuma falha. Nas versões Bootstrap e
+  Tailwind, o laboratório deixou de ser um `<form>` sem botão de enviar, como já era na versão principal.
