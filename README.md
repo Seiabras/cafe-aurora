@@ -96,6 +96,13 @@ alto em brilhos, a Espuma de Plasma faz uma espuma rosa que pulsa, o Cristal de 
 gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versões com framework, quem faz isso é o
 `padaria.js`. Com “menos movimento”, aparecem parados.
 
+## A abertura (1/11/2026)
+
+A tela de abertura (“Calibrando moagem quântica…”, de dia “Acendendo o forno…”) é a exceção “abertura de identidade”
+das diretrizes de UX do Linu Sites: aparece só na primeira página da sessão (`sessionStorage`, classe `ja-abriu` posta
+pelo `inicio.js`), dura 3 s, some com um toque em qualquer lugar, no botão “Pular abertura” ou com Esc, Enter ou
+espaço, e fica parada com “menos movimento”. Vale nas cinco versões.
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
