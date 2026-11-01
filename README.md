@@ -35,7 +35,8 @@ de cada página para os buscadores; o simulador de cada idioma do Linu Sites abr
 páginas prontas. As frases que o script escreve vão num `<script type="application/json">` em cada página.
 
 Desde 1/11/2026, as versões `/bootstrap/` e `/tailwind/` também estão nos 13 idiomas (`/<idioma>/bootstrap/`,
-`/<idioma>/tailwind/`); a Bulma e a Pico, por enquanto, só em português (regra 8: as outras línguas entram numa leva só).
+`/<idioma>/tailwind/`), e a Bulma e a Pico também (`/<idioma>/bulma/`, `/<idioma>/pico/`): 65 páginas no total. Só a
+`versoes.html` fica em português, porque é da disciplina.
 
 ## Trocar de versão e entender o que muda (1/11/2026)
 
