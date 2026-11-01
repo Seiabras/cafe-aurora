@@ -32,7 +32,9 @@ de cada página para os buscadores; o simulador de cada idioma do Linu Sites abr
 [Linu Sites](https://github.com/Seiabras/linu-sites) (o modelo e os textos ficam em `ferramentas/cafe/`); aqui ficam as
 páginas prontas. As frases que o script escreve vão num `<script type="application/json">` em cada página.
 
-As versões `/bootstrap/` e `/tailwind/` continuam só em português.
+Desde 1/11/2026, as versões `/bootstrap/` e `/tailwind/` também estão nos 13 idiomas (`/<idioma>/bootstrap/`,
+`/<idioma>/tailwind/`). A página [`versoes.html`](versoes.html) compara as três, só em português: quanto cada uma pesa
+(CSS puro 38 KB, Bootstrap 74 KB, Tailwind 20 KB de código comprimido), o mesmo cartão nos três jeitos e quando usar cada um.
 
 ## De dia, a Padaria Aurora
 
@@ -49,6 +51,26 @@ farinha, o tempo de forno (a casca doura e o pão cresce) e o que vai por cima.
   “menos movimento”, troca direto.
 
 Para abrir direto a padaria: https://cafe.linupedia.com.br/?modo=dia
+
+## Um café “de verdade” (1/11/2026)
+
+Só na versão em CSS puro (as outras duas ficam como a página original, para comparar o jeito de fazer):
+
+| O quê | Como funciona |
+|---|---|
+| Pedido | “+ Pedido” em cada item do cardápio e “Adicionar ao pedido” no laboratório; o “Pedir agora” abre o pedido, com quantidades, total, nome (validado na hora), comer aqui ou levar, hora e observação. “Mandar no WhatsApp” abre a mensagem pronta. O Café é fictício: o WhatsApp abre sem número, para a pessoa escolher o contato. |
+| Cardápio | Filtros (de noite: quente, gelado, doce, intenso, sem lactose, sem cafeína; de dia: doce, salgado, saindo do forno, sem lactose, sem glúten) e “Detalhes” em cada item (temperatura, cafeína, calorias, alérgenos). |
+| Teste | “Que bebida combina com você?” (de dia, “que pão”): três perguntas e o item do cardápio que mais combina, com o botão de pedir. |
+| Reservas | Nome, pessoas, dia e hora, com erro ao lado do campo; a hora respeita o horário (o café fecha das 4h às 6h; a padaria abre das 6h às 18h). As reservas ficam listadas, com “Confirmar no WhatsApp” e “Cancelar”. |
+| Cartão de carimbos | Cada pedido mandado vale um carimbo; com dez, “o próximo é por conta da casa”. |
+| Sem internet | `sw.js` e `manifest.webmanifest`: a página principal e o que ela usa ficam guardados; os outros idiomas e versões, quando a pessoa os abre. |
+
+O que a pessoa faz fica no `localStorage` do navegador. Embutido no simulador do Linu Sites, nada disso aparece: o
+simulador só mostra as partes que estão na tabela de preços dele.
+
+Lighthouse no celular (1/11/2026, servidor local, sem compressão): a página principal com 93 de desempenho e 100 em
+acessibilidade, boas práticas e SEO; a `versoes.html` com 99 e 100. O axe 4.10 não acha falha de dia nem de noite, em
+390 e 1280 px.
 
 ## Segurança
 
@@ -79,7 +101,7 @@ Pela regra 6 do linuarquivos, cada aparelho tem o seu layout:
 
 | | Celular (até 699 px) | Tablet (700 a 1099 px) | Computador (1100 px ou mais) |
 |---|---|---|---|
-| Ação principal | “Pedir agora” preso embaixo, ao alcance do polegar (cópia do link do topo, no idioma da página) | no menu de gaveta | no topo, sempre à vista |
+| Ação principal | “Pedir agora” preso embaixo, ao alcance do polegar, com o número de itens; o pedido sobe de baixo | no menu de gaveta; o pedido abre no meio | no topo, sempre à vista; o pedido abre numa gaveta à direita |
 | Cardápio | faixa que rola de lado, um cartão por vez | 2 colunas | 3 colunas |
 | Monte o seu pão | o montador e o pão um embaixo do outro | lado a lado | lado a lado, maior |
 | Sintonizar dimensão | recolhido acima do botão de pedir | aberto no canto | aberto no canto |
