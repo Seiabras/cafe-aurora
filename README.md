@@ -72,3 +72,17 @@ Pelo endereço acima, ou abrindo o `index.html` no navegador. Não tem build nem
   sublinhado e todo link e botão solto tem pelo menos 24 px de altura (WCAG 2.2, 2.5.8).
 - Conferido com o axe 4.10 em 31/10/2026, de dia e de noite, nas três versões: nenhuma falha. Nas versões Bootstrap e
   Tailwind, o laboratório deixou de ser um `<form>` sem botão de enviar, como já era na versão principal.
+
+## Três versões: celular, tablet e computador (1/11/2026)
+
+Pela regra 6 do linuarquivos, cada aparelho tem o seu layout:
+
+| | Celular (até 699 px) | Tablet (700 a 1099 px) | Computador (1100 px ou mais) |
+|---|---|---|---|
+| Ação principal | “Pedir agora” preso embaixo, ao alcance do polegar (cópia do link do topo, no idioma da página) | no menu de gaveta | no topo, sempre à vista |
+| Cardápio | faixa que rola de lado, um cartão por vez | 2 colunas | 3 colunas |
+| Monte o seu pão | o montador e o pão um embaixo do outro | lado a lado | lado a lado, maior |
+| Sintonizar dimensão | recolhido acima do botão de pedir | aberto no canto | aberto no canto |
+
+Também deixou de rolar de lado no celular (o menu de gaveta e o halo do topo esticavam a página para 445 px).
+
