@@ -2,8 +2,8 @@
 
 > **In English:** a fictional cyberpunk café "hidden between dimensions", built for the Interface Development course
 > (CEUB, 2026/2). The same prompt went to three AIs (ChatGPT, Gemini and DeepSeek); I picked the best result, studied it
-> and rebuilt the code step by step. It comes in three builds (plain CSS, Bootstrap and Tailwind), in 13 languages, and
-> turns into a bakery by day. Live: https://cafe.linupedia.com.br
+> and rebuilt the code step by step. It comes in five builds (plain CSS, Bootstrap, Tailwind, Bulma and Pico), in 13
+> languages, and turns into a bakery by day. Live: https://cafe.linupedia.com.br
 
 Site de uma cafeteria fictícia, cyberpunk, “escondida entre dimensões”. Fiz para a disciplina de Desenvolvimento de
 Interfaces (CEUB, 2026/2), na atividade em que o mesmo prompt foi usado em três IAs (ChatGPT, Gemini e DeepSeek) para
@@ -19,8 +19,10 @@ passo a passo, e hoje ele é o site de exemplo do simulador do [Linu Sites](http
 | CSS puro | [`/`](https://cafe.linupedia.com.br/) (`index.html`, `estilo.css`, `script.js`) | Todo o layout e o tema escritos à mão; é a versão que aparece no simulador do Linu Sites |
 | Bootstrap 5.3 | [`/bootstrap/`](https://cafe.linupedia.com.br/bootstrap/) | O grid, a navbar e os utilitários vêm do Bootstrap (em `bootstrap/vendor/`); o tema neon sobrescreve os componentes |
 | Tailwind CSS 3.4 | [`/tailwind/`](https://cafe.linupedia.com.br/tailwind/) | O layout vira classes utilitárias no HTML, compiladas em `tailwind/tailwind.css`; o CSS próprio fica com o tema e as animações |
+| Bulma 1.0 | [`/bulma/`](https://cafe.linupedia.com.br/bulma/) | Colunas e componentes prontos como no Bootstrap, mas só CSS, sem script; a compilação com prefixo `bulma-` e sem utilitários (em `bulma/vendor/`) para não brigar com o tema |
+| Pico CSS 2 | [`/pico/`](https://cafe.linupedia.com.br/pico/) | Quase sem classes: estiliza as próprias tags (`nav`, `button`, `input`, `article`); o HTML fica o mais limpo dos cinco, e o trabalho é desfazer o que ele faz sozinho (em `pico/vendor/`) |
 
-As três têm o mesmo conteúdo: tela de abertura, cursor próprio, fundo de partículas em canvas, seções que aparecem ao
+As cinco têm o mesmo conteúdo: tela de abertura, cursor próprio, fundo de partículas em canvas, seções que aparecem ao
 rolar, cardápio, um “laboratório” para montar a bebida (a xícara é desenhada só com CSS) e um painel que desloca o
 matiz de todas as cores.
 
@@ -33,8 +35,15 @@ de cada página para os buscadores; o simulador de cada idioma do Linu Sites abr
 páginas prontas. As frases que o script escreve vão num `<script type="application/json">` em cada página.
 
 Desde 1/11/2026, as versões `/bootstrap/` e `/tailwind/` também estão nos 13 idiomas (`/<idioma>/bootstrap/`,
-`/<idioma>/tailwind/`). A página [`versoes.html`](versoes.html) compara as três, só em português: quanto cada uma pesa
-(CSS puro 38 KB, Bootstrap 74 KB, Tailwind 20 KB de código comprimido), o mesmo cartão nos três jeitos e quando usar cada um.
+`/<idioma>/tailwind/`); a Bulma e a Pico, por enquanto, só em português (regra 8: as outras línguas entram numa leva só).
+
+## Trocar de versão e entender o que muda (1/11/2026)
+
+O rodapé de cada versão tem a mesma lista (CSS puro · Bootstrap · Tailwind · Bulma · Pico · comparar as cinco), que
+leva de qualquer uma para qualquer outra, com a atual marcada. A página [`versoes.html`](versoes.html), só em
+português, explica o que muda quando entra um framework: a ideia de cada um, quem faz o layout, como fica o HTML, o
+tema, o JavaScript, o peso e o que quebrou de verdade ao trocar. O peso do código comprimido (CSS e scripts, sem fontes
+nem imagens): CSS puro 40 KB, Bootstrap 83 KB, Tailwind 30 KB, Bulma 63 KB e Pico 41 KB.
 
 ## De dia, a Padaria Aurora
 
@@ -75,23 +84,23 @@ acessibilidade, boas práticas e SEO; a `versoes.html` com 99 e 100. O axe 4.10 
 ## Café e padaria com as mesmas partes (1/11/2026)
 
 Tudo o que o café tem, a padaria tem, e vice-versa: os quatro detalhes de cada item, seis filtros (de dia: doce, salgado,
-saindo do forno, sem lactose, sem glúten e vegano), o teste, o pedido e as reservas. As versões Bootstrap e Tailwind
+saindo do forno, sem lactose, sem glúten e vegano), o teste, o pedido e as reservas. As versões com framework
 também viram padaria de dia, com o botão de sol e lua, o pão do “Monte o seu pão” e a farinha no ar, pelos arquivos
-`padaria.css` e `padaria.js`, que as duas usam. No simulador do Linu Sites, o pedido, o cardápio com filtros, o teste,
+`padaria.css` e `padaria.js`, que as quatro usam. No simulador do Linu Sites, o pedido, o cardápio com filtros, o teste,
 as reservas e o cartão de carimbos são módulos com preço, que ligam e desligam ali.
 
 ## Os modificadores aparecem na xícara (1/11/2026)
 
 No “Monte sua bebida”, cada modificador muda a xícara, como as coberturas mudam o pão de dia: a Poeira de Cometa cai do
 alto em brilhos, a Espuma de Plasma faz uma espuma rosa que pulsa, o Cristal de Açúcar boia na bebida e a Flor de Neon
-gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versões Bootstrap e Tailwind, quem faz isso é o
+gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versões com framework, quem faz isso é o
 `padaria.js`. Com “menos movimento”, aparecem parados.
 
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
 do Google e sem estilo ou script dentro do HTML. Por isso as fontes (Orbitron e Rajdhani, licença OFL em
-`fontes/OFL.txt`) e o Bootstrap (licença MIT em `bootstrap/vendor/`) ficam aqui dentro, e o Tailwind vai compilado.
+`fontes/OFL.txt`), o Bootstrap, a Bulma e a Pico (licença MIT, cada uma no seu `vendor/`) ficam aqui dentro, e o Tailwind vai compilado.
 
 Dentro do simulador, a página do Linu Sites liga e desliga partes do Café por `postMessage`; o Café só aceita essas
 mensagens de `https://sites.linupedia.com.br`.
