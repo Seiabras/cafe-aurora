@@ -72,6 +72,14 @@ Lighthouse no celular (1/11/2026, servidor local, sem compressão): a página pr
 acessibilidade, boas práticas e SEO; a `versoes.html` com 99 e 100. O axe 4.10 não acha falha de dia nem de noite, em
 390 e 1280 px.
 
+## Café e padaria com as mesmas partes (1/11/2026)
+
+Tudo o que o café tem, a padaria tem, e vice-versa: os quatro detalhes de cada item, seis filtros (de dia: doce, salgado,
+saindo do forno, sem lactose, sem glúten e vegano), o teste, o pedido e as reservas. As versões Bootstrap e Tailwind
+também viram padaria de dia, com o botão de sol e lua, o pão do “Monte o seu pão” e a farinha no ar, pelos arquivos
+`padaria.css` e `padaria.js`, que as duas usam. No simulador do Linu Sites, o pedido, o cardápio com filtros, o teste,
+as reservas e o cartão de carimbos são módulos com preço, que ligam e desligam ali.
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
