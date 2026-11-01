@@ -5,6 +5,13 @@ sai da cópia em `sitios/cafe-aurora/` do `Seiabras/linu-sites`: mudou lá, trag
 a política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN e sem estilo ou script dentro
 do HTML.
 
+## Três versões: celular, tablet e computador (1/11/2026)
+
+“Todo projeto tem que ter sua versão dividida entre os aparelhos, tablet, computador e celular, pra se adaptar à
+melhor forma de ver cada um (um layout específico).” Cada aparelho tem o seu layout (navegação, colunas, o que fica à
+vista), seguindo a seção 3 da `DIRETRIZES-UX.md` do `Seiabras/linu-sites`; antes de entregar, o teste das três capturas
+(390, 820 e 1280 px lado a lado) tem de mostrar arrumações diferentes.
+
 ## Perfil do GitHub (30/10/2026)
 
 **Conferir o perfil do GitHub** (`Seiabras/Seiabras`, regra de 30/10/2026): se a mudança altera o que o perfil
