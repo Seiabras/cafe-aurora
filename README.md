@@ -80,6 +80,13 @@ também viram padaria de dia, com o botão de sol e lua, o pão do “Monte o se
 `padaria.css` e `padaria.js`, que as duas usam. No simulador do Linu Sites, o pedido, o cardápio com filtros, o teste,
 as reservas e o cartão de carimbos são módulos com preço, que ligam e desligam ali.
 
+## Os modificadores aparecem na xícara (1/11/2026)
+
+No “Monte sua bebida”, cada modificador muda a xícara, como as coberturas mudam o pão de dia: a Poeira de Cometa cai do
+alto em brilhos, a Espuma de Plasma faz uma espuma rosa que pulsa, o Cristal de Açúcar boia na bebida e a Flor de Neon
+gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versões Bootstrap e Tailwind, quem faz isso é o
+`padaria.js`. Com “menos movimento”, aparecem parados.
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
