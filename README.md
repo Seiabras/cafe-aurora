@@ -102,7 +102,9 @@ gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versõe
 A tela de abertura (“Calibrando moagem quântica…”, de dia “Acendendo o forno…”) é a exceção “abertura de identidade”
 das diretrizes de UX do Linu Sites: aparece só na primeira página da sessão (`sessionStorage`, classe `ja-abriu` posta
 pelo `inicio.js`), dura 3 s, some com um toque em qualquer lugar, no botão “Pular abertura” ou com Esc, Enter ou
-espaço, e fica parada com “menos movimento”. Vale nas cinco versões.
+espaço, e fica parada com “menos movimento”. Vale nas cinco versões. Embutido no simulador do Linu Sites, ela só
+aparece quando alguém liga o módulo “Abertura de identidade” ou toca em “Ver a abertura”, com a duração escolhida ali
+(1,5 ou 3 s).
 
 ## Segurança
 
