@@ -106,6 +106,21 @@ espaço, e fica parada com “menos movimento”. Vale nas cinco versões. Embut
 aparece quando alguém liga o módulo “Abertura de identidade” ou toca em “Ver a abertura”, com a duração escolhida ali
 (1,5 ou 3 s).
 
+### Quanto a abertura custa (medido em 2/11/2026)
+
+Celular de 390 px, mediana de três medidas. O Lighthouse não serve para isso: ele conta o logo da abertura como o
+“maior conteúdo” e dá praticamente a mesma nota às três (desempenho 95, 94 e 94; acessibilidade e boas práticas 100).
+O que conta é quando a pessoa começa a ver o Café de verdade:
+
+| Abertura | 4G lento (o do Lighthouse) | 4G bom |
+|---|---|---|
+| Sem abertura | 1,6 s | 0,6 s |
+| 1,5 s | 2,3 s | 1,7 s |
+| 3 s (a de hoje) | 3,2 s | 3,1 s |
+
+No 4G lento, os 3 s custam 1,6 s a mais que nada; no 4G bom, 2,5 s a mais. É por isso que site de cliente fica com
+1,5 s nas diretrizes; aqui, num trabalho em que a abertura faz parte da experiência, ficaram os 3 s.
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
