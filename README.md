@@ -121,6 +121,14 @@ O que conta é quando a pessoa começa a ver o Café de verdade:
 No 4G lento, os 3 s custam 1,6 s a mais que nada; no 4G bom, 2,5 s a mais. É por isso que site de cliente fica com
 1,5 s nas diretrizes; aqui, num trabalho em que a abertura faz parte da experiência, ficaram os 3 s.
 
+## Um lugar, dois turnos (4/11/2026)
+
+O Café e a Padaria são o mesmo estabelecimento: a padaria abre das 6h às 18h, e o café das 18h às 6h. Às 18h o forno
+esfria e a fenda reabre; às 6h ela encolhe até virar forno. No alto da página, nos dois modos, um relógio diz o que
+está aberto agora pelo relógio de quem visita e quanto falta para a troca de turno (`inicio.js`). Os horários, as
+reservas e a história da Origem seguem os turnos. Por enquanto só em português; nas outras línguas, o relógio fica
+escondido até a tradução.
+
 ## Fotos e desempenho (4/11/2026)
 
 As fotos do cardápio (6 bebidas e 6 pães), da fachada atrás do título e do balcão na Origem foram feitas com a API de
