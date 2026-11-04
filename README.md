@@ -101,7 +101,7 @@ gira sobre a espuma. O script põe `com-1` a `com-4` na `.cup-wrap`; nas versõe
 
 A tela de abertura (“Calibrando moagem quântica…”, de dia “Acendendo o forno…”) é a exceção “abertura de identidade”
 das diretrizes de UX do Linu Sites: aparece só na primeira página da sessão (`sessionStorage`, classe `ja-abriu` posta
-pelo `inicio.js`), dura 3 s, some com um toque em qualquer lugar, no botão “Pular abertura” ou com Esc, Enter ou
+pelo `inicio.js`), dura 0,9 s (até 1,4 s; eram 3 s até 4/11/2026, quando o Café ficou lento demais), some com um toque em qualquer lugar, no botão “Pular abertura” ou com Esc, Enter ou
 espaço, e fica parada com “menos movimento”. Vale nas cinco versões. Embutido no simulador do Linu Sites, ela só
 aparece quando alguém liga o módulo “Abertura de identidade” ou toca em “Ver a abertura”, com a duração escolhida ali
 (1,5 ou 3 s).
@@ -120,6 +120,18 @@ O que conta é quando a pessoa começa a ver o Café de verdade:
 
 No 4G lento, os 3 s custam 1,6 s a mais que nada; no 4G bom, 2,5 s a mais. É por isso que site de cliente fica com
 1,5 s nas diretrizes; aqui, num trabalho em que a abertura faz parte da experiência, ficaram os 3 s.
+
+## Fotos e desempenho (4/11/2026)
+
+As fotos do cardápio (6 bebidas e 6 pães), da fachada atrás do título e do balcão na Origem foram feitas com a API de
+imagens do Google, sempre em par: de noite, o café; de dia, a padaria, no mesmo lugar (a de dia nasceu com a de noite
+como referência). Cada uma tem de 12 a 94 KB em WebP, em dois tamanhos, e a do modo que não está à vista não é
+baixada. Os pedidos e a escolha de cada foto ficam no `linu-sites` (`ferramentas/cafe/arte/`).
+
+No mesmo dia o Café ficou mais leve, medido como um celular simples (processador 4× mais lento): o título passou a
+aparecer em 1,5 a 1,7 s (eram 3,9 s); as entradas ao rolar, em 0,4 s; o fundo só anda com a abertura à vista (20
+quadros por segundo no celular), e o que gira ou pulsa fora da tela fica parado. Com a tela parada, o processador
+caiu de 34% para 19% no topo e uns 3% depois de rolar.
 
 ## Segurança
 
