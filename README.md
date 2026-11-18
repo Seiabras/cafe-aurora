@@ -143,13 +143,14 @@ caiu de 34% para 19% no topo e uns 3% depois de rolar.
 
 ## Projeto final: login, busca, carrossel e painel de acessibilidade (18/11/2026)
 
-Para o projeto final da disciplina, a versão principal (CSS puro), por enquanto só em pt-BR, ganhou quatro partes. Cada
+Para o projeto final da disciplina, a versão principal (CSS puro), por enquanto só em pt-BR, ganhou cinco partes. Cada
 uma existe no café e na padaria e tem arrumação própria no celular, no tablet e no computador.
 
 | Parte | Arquivos | O que faz |
 |---|---|---|
 | Painel de acessibilidade | `recursos.js`, `recursos.css`, `inicio.js` | Botão fixo “Acessibilidade” que abre uma janela com: tema escuro (café) ou claro (padaria), tamanho do texto (90% a 150%), alto contraste, links sublinhados, fonte simples, mais espaço entre linhas e animações paradas. As escolhas ficam no `localStorage` (`aurora-acessibilidade`) e o `inicio.js` aplica antes de pintar. |
 | Busca no cardápio | `recursos.js`, `recursos.css` | Campo de busca (`role="search"`) que procura no nome e na descrição, sem diferenciar acentos, e soma com os filtros que já existiam. O resultado é anunciado ao leitor de tela (`aria-live`). |
+| Galeria de fotos | `recursos.js`, `recursos.css` | No fim da seção Origem, um carrossel com as fotos da casa (a rua, o balcão e dois itens do cardápio), as do café de noite e as da padaria de dia, com texto alternativo e legenda. Usa o mesmo carrossel dos depoimentos. |
 | Carrossel dos depoimentos | `recursos.js`, `recursos.css` | As Transmissões (de dia, Recados) viram um carrossel com setas, bolinhas, arrastar com o dedo e setas do teclado. Passa sozinho a cada 7 s, mas para com o botão de pausa, com o mouse em cima, com o foco dentro, com “menos movimento” no sistema ou com “Parar animações” (WCAG 2.2.2). |
 | Login | `entrar.html`, `entrar.js` | Página com abas “Entrar” e “Criar conta”, erros em cada campo, mostrar ou esconder a senha e “continuar conectado”. O Café é fictício: a conta fica só no navegador e, da senha, só o resumo SHA-256. O menu mostra “Entrar” ou “Olá, nome”. |
 
@@ -157,7 +158,7 @@ uma existe no café e na padaria e tem arrumação própria no celular, no table
 |---|---|---|---|
 | Acessibilidade | só o ícone, acima da barra “Pedir”; a janela sobe de baixo | ícone e nome; a janela abre no meio | ícone e nome; a janela vira uma gaveta à esquerda |
 | Busca | acima dos filtros, largura toda | acima dos filtros | numa coluna à esquerda dos filtros |
-| Carrossel | um depoimento por vez; setas embaixo | o atual no meio, pontas dos vizinhos à vista | setas nas laterais, depoimento maior |
+| Carrosséis (fotos e depoimentos) | um slide por vez; setas embaixo | o atual no meio, pontas dos vizinhos à vista | setas nas laterais, depoimento maior |
 | Login | só o formulário | só o formulário, mais folgado | o formulário ao lado do que a conta guarda |
 
 Conferido em 18/11/2026 com o `conferir-visual.mjs` (axe 4.10, Playwright) em 390, 820 e 1280 px, no claro e no escuro,
