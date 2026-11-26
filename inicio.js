@@ -85,6 +85,11 @@
     var FUNDO = [251, 243, 228], FUNDO2 = [244, 230, 204];
     var PROPS = ['--luz-h', '--luz-s', '--luz-l', '--luz-bg', '--luz-bg2', '--luz-sepia', '--luz-foto', '--luz-sat', '--luz-bri'];
     var ariaDim = dim && dim.getAttribute('aria-label'), ariaHue = hue.getAttribute('aria-label');
+    // o título e o rótulo (data-luz="titulo" e "rotulo" no modelo): de dia, o texto do js.luz; de noite, o de sempre
+    var trocas = Array.prototype.map.call(document.querySelectorAll('[data-luz]'), function (n) {
+      return { n: n, noite: n.textContent, dia: L[n.getAttribute('data-luz')] };
+    });
+    function textos(dia) { trocas.forEach(function (t) { if (t.dia) t.n.textContent = dia ? t.dia : t.noite; }); }
     function modo() { return raiz.getAttribute('data-modo') === 'dia' ? 'dia' : 'noite'; }
     function agora() {
       var d = new Date(), h = d.getHours() + d.getMinutes() / 60;
@@ -113,8 +118,10 @@
         if (ariaDim) dim.setAttribute('aria-label', ariaDim);
         if (ariaHue) hue.setAttribute('aria-label', ariaHue);
         hue.removeAttribute('aria-valuetext');
+        textos(false);
         return;
       }
+      textos(true);
       var t = v / 70, a = t < 0 ? PONTOS[0] : PONTOS[2], k = Math.abs(t), z = PONTOS[1];
       function q(nome) { return mistura(z[nome], a[nome], k); }
       raiz.style.setProperty('--desvio', valores.noite); // a dimensão da noite fica como estava
