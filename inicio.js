@@ -80,7 +80,7 @@
     var PONTOS = [
       { h: -14, s: -12, l: 4, tinta: [249, 230, 229], p: 0.7, sepia: 0.06, foto: -12, sat: 0.9, bri: 1.04 },
       { h: 0, s: 0, l: 0, tinta: [251, 243, 228], p: 0, sepia: 0, foto: 0, sat: 1, bri: 1 },
-      { h: 6, s: 14, l: -5, tinta: [245, 216, 172], p: 0.75, sepia: 0.32, foto: -6, sat: 1.25, bri: 0.97 }
+      { h: 6, s: 12, l: -8, tinta: [245, 216, 172], p: 0.75, sepia: 0.32, foto: -6, sat: 1.25, bri: 0.97 }
     ];
     var FUNDO = [251, 243, 228], FUNDO2 = [244, 230, 204];
     var PROPS = ['--luz-h', '--luz-s', '--luz-l', '--luz-bg', '--luz-bg2', '--luz-sepia', '--luz-foto', '--luz-sat', '--luz-bri'];

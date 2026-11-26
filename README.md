@@ -203,8 +203,17 @@ dia, o mesmo controle vira **“Sintonizar a luz”**, a hora do sol no turno da
 - Quem faz é o `inicio.js` (as variáveis `--luz-*`), que as cinco versões carregam; o CSS está no bloco 17 do
   `estilo.css` e no `padaria.css`. Nas outras línguas, as cores já seguem a luz, mas o rótulo só mostra a hora, até a
   tradução.
-- Contraste conferido com Playwright às 6h, 12h e 18h, na versão principal e na Bootstrap: o menor é 5,2:1 (WCAG AA
-  pede 4,5:1).
+- Conferido com o axe 4.10 em 26/11/2026 (ver abaixo). Na primeira passada, a versão Bootstrap às 18h tinha texto
+  laranja a 4,48:1 sobre as seções douradas: as cores dela (`--aurora-*`, no `padaria.css`) só seguiam o matiz da luz,
+  não a claridade. Agora seguem, e o fim de tarde escurece as cores de destaque um pouco mais.
+
+## Conferência de acessibilidade (26/11/2026)
+
+Com o `conferir-visual.mjs` (axe 4.10, Playwright) do linuarquivos: a página inicial, o login, as quatro versões com
+framework e a inglesa, em 390, 820 e 1280 px, claro e escuro, sem falha séria ou crítica, sem erro no console e sem
+rolagem lateral. Como o painel, a depuração e a luz só aparecem depois de um clique, uma segunda passada abriu cada
+um antes do axe: o painel aberto, a barra e o inspetor da depuração (com todas as seções abertas), e a luz às 6h e
+às 18h nas cinco versões, de dia e de noite, nas três larguras: 54 conferências, nenhuma falha.
 
 ## Segurança
 

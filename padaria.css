@@ -248,7 +248,7 @@ html:not([data-modo="dia"]) .so-dia,[data-modo="dia"] .so-noite{display:none !im
 [data-modo="dia"]{
   --bs-body-bg:var(--luz-bg,#fbf3e4);--bs-body-color:#3a2414;--bs-emphasis-color:#2a1608;--bs-secondary-color:#6e5038;
   --bs-border-color:rgba(122,74,34,.22);--bs-link-color:hsl(24 70% 34%);--bs-link-hover-color:hsl(345 62% 40%);
-  --aurora-cyan:hsl(calc(24 + var(--luz-h)) 70% 34%);--aurora-magenta:hsl(calc(345 + var(--luz-h)) 62% 40%);--aurora-violet:hsl(calc(205 + var(--luz-h)) 55% 34%);--aurora-amber:hsl(calc(36 + var(--luz-h)) 90% 30%);
+  --aurora-cyan:hsl(calc(24 + var(--luz-h)) calc(70% + var(--luz-s)) calc(34% + var(--luz-l)));--aurora-magenta:hsl(calc(345 + var(--luz-h)) calc(62% + var(--luz-s)) calc(40% + var(--luz-l)));--aurora-violet:hsl(calc(205 + var(--luz-h)) calc(55% + var(--luz-s)) calc(34% + var(--luz-l)));--aurora-amber:hsl(calc(36 + var(--luz-h)) calc(90% + var(--luz-s)) calc(30% + var(--luz-l)));
 }
 [data-modo="dia"] body{background:var(--bs-body-bg, var(--bg));color:var(--bs-body-color, var(--text))}
 [data-modo="dia"] .card-aurora{background:linear-gradient(160deg,rgba(255,252,245,.94),rgba(250,236,214,.88));color:var(--bs-body-color)}
