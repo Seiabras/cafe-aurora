@@ -28,7 +28,7 @@ matiz de todas as cores.
 
 ## Idiomas
 
-O site está em 13 idiomas: português do Brasil na raiz e `/pt-pt/`, `/es/`, `/ca/`, `/nl/`, `/en/`, `/fr/`, `/de/`,
+O site está em 13 idiomas (cada parte nova nasce em pt-BR e entra nas outras numa leva só): português do Brasil na raiz e `/pt-pt/`, `/es/`, `/ca/`, `/nl/`, `/en/`, `/fr/`, `/de/`,
 `/it/`, `/intl/` (inglês internacional), `/ja/`, `/ko/` e `/zh-hant/`, com as alternativas
 de cada página para os buscadores; o simulador de cada idioma do Linu Sites abre o Café no mesmo idioma. As páginas de cada idioma são geradas no repositório do
 [Linu Sites](https://github.com/Seiabras/linu-sites) (o modelo e os textos ficam em `ferramentas/cafe/`); aqui ficam as
@@ -127,8 +127,7 @@ No 4G lento, os 3 s custam 1,6 s a mais que nada; no 4G bom, 2,5 s a mais. É po
 O Café e a Padaria são o mesmo estabelecimento: a padaria abre das 6h às 18h, e o café das 18h às 6h. Às 18h o forno
 esfria e a fenda reabre; às 6h ela encolhe até virar forno. No alto da página, nos dois modos, um relógio diz o que
 está aberto agora pelo relógio de quem visita e quanto falta para a troca de turno (`inicio.js`). Os horários, as
-reservas e a história da Origem seguem os turnos. Por enquanto só em português; nas outras línguas, o relógio fica
-escondido até a tradução.
+reservas e a história da Origem seguem os turnos. Nas 13 línguas desde 26/11/2026, com a hora no jeito de cada uma.
 
 ## Fotos e desempenho (4/11/2026)
 
@@ -144,7 +143,7 @@ caiu de 34% para 19% no topo e uns 3% depois de rolar.
 
 ## Projeto final: login, busca, carrossel e painel de acessibilidade (18/11/2026)
 
-Para o projeto final da disciplina, a versão principal (CSS puro), por enquanto só em pt-BR, ganhou cinco partes. Cada
+Para o projeto final da disciplina, a versão principal (CSS puro) ganhou cinco partes, nas 13 línguas desde 26/11/2026. Cada
 uma existe no café e na padaria e tem arrumação própria no celular, no tablet e no computador.
 
 | Parte | Arquivos | O que faz |
@@ -167,7 +166,7 @@ na página inicial e no login: nenhuma falha séria ou crítica, nenhum erro no 
 
 ## Depuração, idiomas e o painel com cara de terminal (26/11/2026)
 
-Na versão principal, por enquanto só em pt-BR, o painel de acessibilidade ganhou três coisas:
+Na versão principal, nas 13 línguas, o painel de acessibilidade ganhou três coisas:
 
 | Parte | Arquivos | O que faz |
 |---|---|---|
@@ -201,8 +200,9 @@ dia, o mesmo controle vira **“Sintonizar a luz”**, a hora do sol no turno da
 - De dia, o controle começa na hora de agora. Cada modo guarda o seu valor: a dimensão da noite fica como estava quando
   a padaria abre, e volta quando o café reabre.
 - Quem faz é o `inicio.js` (as variáveis `--luz-*`), que as cinco versões carregam; o CSS está no bloco 17 do
-  `estilo.css` e no `padaria.css`. Nas outras línguas, as cores já seguem a luz, mas o rótulo só mostra a hora, até a
-  tradução.
+  `estilo.css` e no `padaria.css`.
+- Um botão abaixo do controle volta: de dia, “↺ Agora” (a hora de verdade); de noite, “↺ Origem” (0°). Fica
+  desligado quando o controle já está lá.
 - Conferido com o axe 4.10 em 26/11/2026 (ver abaixo). Na primeira passada, a versão Bootstrap às 18h tinha texto
   laranja a 4,48:1 sobre as seções douradas: as cores dela (`--aurora-*`, no `padaria.css`) só seguiam o matiz da luz,
   não a claridade. Agora seguem, e o fim de tarde escurece as cores de destaque um pouco mais.
@@ -214,6 +214,24 @@ framework e a inglesa, em 390, 820 e 1280 px, claro e escuro, sem falha séria o
 rolagem lateral. Como o painel, a depuração e a luz só aparecem depois de um clique, uma segunda passada abriu cada
 um antes do axe: o painel aberto, a barra e o inspetor da depuração (com todas as seções abertas), e a luz às 6h e
 às 18h nas cinco versões, de dia e de noite, nas três larguras: 54 conferências, nenhuma falha.
+
+## As 13 línguas, a troca de idioma no rodapé e o celular (26/11/2026)
+
+Com o pt-BR aprovado, a leva da regra 8 levou às outras 12 línguas tudo o que tinha nascido só em português: o painel
+de acessibilidade, a busca, os carrosséis e a galeria, a depuração (com as 45 explicações), a luz da padaria, o relógio
+de turno e o que mudou em 04/11 (horários, “das 18h às 6h”, a Origem, os botões de modo, as mensagens da reserva).
+O login também: o `entrar.html` existe em cada idioma (`/<pasta>/entrar.html`). A hora sai no jeito de cada língua
+(“18h05”, “18:05”, “6:05 p.m.”, “18時”).
+
+As cinco versões ganharam no rodapé, abaixo da troca de versão, as 13 línguas com o próprio nome, levando à mesma
+versão no outro idioma. As versões com framework não tinham o painel nem outro jeito de trocar de língua.
+
+Conferido em celulares emulados com toque (iPhone 13 e Pixel 7): a depuração no toque só inspeciona (o “+ Pedido” não
+entra no pedido), a página continua rolando e a parte escolhida fica à vista acima do inspetor, que sobe de baixo.
+Duas coisas só no aparelho de verdade: o deslizar do dedo com a depuração ligada e o tamanho do texto do inspetor.
+
+O inspetor e o seletor de idiomas também existem genéricos, para outros sites, em
+`linuarquivos/modelos/ferramentas/depuracao/`.
 
 ## Segurança
 
