@@ -56,7 +56,8 @@ farinha, o tempo de forno (a casca doura e o pão cresce) e o que vai por cima.
 - O `inicio.js` escolhe o modo antes de pintar (`data-modo` no `<html>`): primeiro `?modo=dia` ou `?modo=noite` no
   endereço, depois a escolha guardada pelo botão de sol e lua, depois o relógio. Sem JavaScript, fica o café.
 - Cada texto que muda está duas vezes no HTML (`.so-noite` e `.so-dia`) e o CSS esconde o do outro modo. As cores de
-  dia são as mesmas variáveis redefinidas no bloco 17 do `estilo.css`, e o painel de matiz gira as duas paletas.
+  dia são as mesmas variáveis redefinidas no bloco 17 do `estilo.css`. De noite o painel gira o matiz; de dia ele muda
+  a luz da hora (ver “A luz da padaria” abaixo).
 - O botão faz a virada: o neon pisca, a tela se cobre, o sol nasce (ou a lua desce) e o modo troca por baixo. Com
   “menos movimento”, troca direto.
 
@@ -181,6 +182,29 @@ Na versão principal, por enquanto só em pt-BR, o painel de acessibilidade ganh
 
 Conferido em 26/11/2026 com Playwright em 390, 820 e 1280 px, de dia e de noite: a depuração liga, inspeciona e
 desliga com Esc, os 13 idiomas aparecem com o atual marcado, nada rola de lado e o console fica sem erros.
+
+## A luz da padaria (26/11/2026)
+
+De noite, o “Sintonizar dimensão” gira o matiz de tudo em até ±70°: é neon de outra dimensão, e combina. De dia isso
+não fazia sentido: a casca (matiz 24) virava verde ou rosa-choque e as fotos dos pães ficavam esquisitas. Então, de
+dia, o mesmo controle vira **“Sintonizar a luz”**, a hora do sol no turno da padaria:
+
+| Ponta | Hora | O que muda |
+|---|---|---|
+| Esquerda | 6h, amanhecer | fundo rosado, cores de destaque puxando para o rosa e um pouco mais claras, fotos levemente mais frias e claras |
+| Meio | 12h, meio-dia | as cores de sempre |
+| Direita | 18h, fim de tarde | fundo dourado, cores mais quentes, saturadas e escuras, fotos com sépia e mais saturação |
+
+- O desvio fica pequeno (matiz de −14° a +6°), então pão continua com cor de pão; as fotos ganham sépia, saturação e
+  brilho em vez de girar o matiz. A trilha do controle é o próprio dia (rosa, claro, dourado) e o rótulo diz a hora
+  (“9h30 · manhã”), também para o leitor de tela (`aria-valuetext`).
+- De dia, o controle começa na hora de agora. Cada modo guarda o seu valor: a dimensão da noite fica como estava quando
+  a padaria abre, e volta quando o café reabre.
+- Quem faz é o `inicio.js` (as variáveis `--luz-*`), que as cinco versões carregam; o CSS está no bloco 17 do
+  `estilo.css` e no `padaria.css`. Nas outras línguas, as cores já seguem a luz, mas o rótulo só mostra a hora, até a
+  tradução.
+- Contraste conferido com Playwright às 6h, 12h e 18h, na versão principal e na Bootstrap: o menor é 5,2:1 (WCAG AA
+  pede 4,5:1).
 
 ## Segurança
 
