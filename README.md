@@ -164,6 +164,24 @@ uma existe no café e na padaria e tem arrumação própria no celular, no table
 Conferido em 18/11/2026 com o `conferir-visual.mjs` (axe 4.10, Playwright) em 390, 820 e 1280 px, no claro e no escuro,
 na página inicial e no login: nenhuma falha séria ou crítica, nenhum erro no console, nada rolando de lado.
 
+## Depuração, idiomas e o painel com cara de terminal (26/11/2026)
+
+Na versão principal, por enquanto só em pt-BR, o painel de acessibilidade ganhou três coisas:
+
+| Parte | Arquivos | O que faz |
+|---|---|---|
+| Depuração | `depurar.js`, `recursos.css` (bloco 6) | “Ligar a depuração” no painel. Depois, tocar ou clicar em qualquer parte da tela mostra como ela foi feita: o que é e em que arquivos está (a lista `dep_partes` do bloco `#textos-cafe`, com 45 partes; o que não está na lista usa a explicação da parte que o contém), o caminho até ela (cada degrau leva ao pai), a caixa, o estilo calculado, as regras do CSS que pegam nela, na ordem do navegador, e o HTML. Enquanto está ligada, o clique só inspeciona (não abre link, não envia formulário). No teclado: Tab até a parte e Enter. Esc ou “Sair” desliga. O `depurar.js` só é baixado na primeira vez que alguém liga. |
+| Idiomas | `recursos.js` | As 13 línguas, cada uma com o próprio nome, no primeiro grupo do painel. Os endereços vêm dos `<link rel="alternate" hreflang>` da página, então levam à mesma versão no outro idioma. No menu, um atalho com o código do idioma de agora (“◍ PT”) abre o painel já nessa lista. |
+| Visual de terminal | `recursos.js`, `recursos.css` (bloco 5) | O painel virou um “módulo do sistema” da fenda (de dia, do forno): linhas de tela no fundo, cantos em colchete, o título com o brilho partido em ciano e magenta e uma falha rápida a cada 6 s, grupos numerados, teclas com cantos cortados, chaves com luz e um medidor do tamanho do texto. A decoração é `aria-hidden` ou CSS; o que o leitor de tela lê não mudou. |
+
+| | Celular | Tablet | Computador |
+|---|---|---|---|
+| Inspetor | sobe de baixo, até 58% da tela | cartão no canto de baixo, à direita | gaveta à direita, da altura da tela |
+| Idiomas no painel | dois por linha, mais justos | três por linha | dois por linha (a gaveta tem 400 px) |
+
+Conferido em 26/11/2026 com Playwright em 390, 820 e 1280 px, de dia e de noite: a depuração liga, inspeciona e
+desliga com Esc, os 13 idiomas aparecem com o atual marcado, nada rola de lado e o console fica sem erros.
+
 ## Segurança
 
 O site segue a mesma política de segurança dos sites do Linu Sites: tudo vem do próprio endereço, sem CDN, sem fonte
